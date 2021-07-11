@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\API\StrukturalController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -17,3 +18,8 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::get('/data-struktural',[StrukturalController::class, 'index']);
+Route::post('/datastruktural',[StrukturalController::class, 'store']);
+Route::patch('/data-struktural/{id}',[StrukturalController::class, 'update']);
+Route::delete('/data-struktural/{id}',[StrukturalController::class, 'destroy']);
