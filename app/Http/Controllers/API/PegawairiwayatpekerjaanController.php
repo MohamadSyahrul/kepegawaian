@@ -92,24 +92,27 @@ class PegawairiwayatpekerjaanController extends Controller
     public function update(PegawairiwayatpekerjaanRequest $request, $id)
     {
         $riwayat = Pegawai_riwayat_pekerjaan::find($id);
-        $riwayat->update([
-            'id_pegawai' => $request->id_pegawai,
-            'tentang' => $request->tentang,
-            'nomor_sk' => $request->nomor_sk,
-            'tanggal_sk' => $request->tanggal_sk,
-            'pejabat_yg_mengesahkan' => $request->pejabat_yg_mengesahkan,
-            'pangkat' => $request->pangkat,
-            'tmt' => $request->tmt,
-            'masa_kerja_tahun' => $request->masa_kerja_tahun,
-            'masa_kerja_bulanan' => $request->masa_kerja_bulanan,
-            'gaji' => $request->gaji,
-            'keterangak' => $request->keterangak
+        $riwayat->update($request->all());
+        return $riwayat;
+        // $riwayat = Pegawai_riwayat_pekerjaan::find($id);
+        // $riwayat->update([
+        //     'id_pegawai' => $request->id_pegawai,
+        //     'tentang' => $request->tentang,
+        //     'nomor_sk' => $request->nomor_sk,
+        //     'tanggal_sk' => $request->tanggal_sk,
+        //     'pejabat_yg_mengesahkan' => $request->pejabat_yg_mengesahkan,
+        //     'pangkat' => $request->pangkat,
+        //     'tmt' => $request->tmt,
+        //     'masa_kerja_tahun' => $request->masa_kerja_tahun,
+        //     'masa_kerja_bulanan' => $request->masa_kerja_bulanan,
+        //     'gaji' => $request->gaji,
+        //     'keterangak' => $request->keterangak
 
-        ]);
-        return response()->json([
-            "message" => "Update Data method Success",
-            'data' => $riwayat
-        ], 200);
+        // ]);
+        // return response()->json([
+        //     "message" => "Update Data method Success",
+        //     'data' => $riwayat
+        // ], 200);
     }
 
     /**

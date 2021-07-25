@@ -11,6 +11,7 @@ class Pegawai_ttd_cuti extends Model
     protected $primaryKey = "id";
     protected $table = "pegawai_ttd_cuti";
     protected $fillable = [
+        'id_pegawai',
         'jabatan'
     ];
 }
