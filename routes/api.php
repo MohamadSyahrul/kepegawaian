@@ -33,34 +33,19 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 // data Struktural
-Route::get('/data-struktural',[StrukturalController::class, 'index']);
-Route::post('/datastruktural',[StrukturalController::class, 'store']);
-Route::patch('/data-struktural/{id}',[StrukturalController::class, 'update']);
-Route::delete('/data-struktural/{id}',[StrukturalController::class, 'destroy']);
+Route::resource('/data-struktural',StrukturalController::class);
 
 // unit
-Route::get('/get-unit',[UnitController::class, 'index']);
-Route::post('/create-unit',[UnitController::class, 'store']);
-Route::patch('/update-unit/{id}',[UnitController::class, 'update']);
-Route::delete('/delete-unit/{id}',[UnitController::class, 'destroy']);
+Route::resource('/unit',UnitController::class);
 
 // staf
-Route::get('/get-staf',[StaffController::class, 'index']);
-Route::post('/create-staf',[StaffController::class, 'store']);
-Route::post('/update-staf/{id}',[StaffController::class, 'update']);
-Route::delete('/delete-staf/{id}',[StaffController::class, 'destroy']);
+Route::resource('/staf', StaffController::class);
 
 // data pns
-Route::get('get-data-pns', [DatapnsController::class,'index']);
-Route::post('/create-data-pns',[DatapnsController::class, 'store']);
-Route::post('/update-data-pns/{id}',[DatapnsController::class, 'update']);
-Route::delete('/delete-data-pns/{id}',[DatapnsController::class, 'destroy']);
+Route::resource('data-pns', DatapnsController::class);
 
 // pegawai tidak Masuk Kerja
-Route::get('get-pegawai-tidak-masuk-kerja', [PegawaitidakmasukkerjaController::class,'index']);
-Route::post('/create-pegawai-tidak-masuk-kerja',[PegawaitidakmasukkerjaController::class, 'store']);
-Route::post('/update-pegawai-tidak-masuk-kerja/{id}',[PegawaitidakmasukkerjaController::class, 'update']);
-Route::delete('/delete-pegawai-tidak-masuk-kerja/{id}',[PegawaitidakmasukkerjaController::class, 'destroy']);
+Route::resource('pegawai-tidak-masuk-kerja', PegawaitidakmasukkerjaController::class);
 
 // Pegawai riwayat pekerjaan
 Route::resource('pegawai-riwayat-pekerjaan', PegawairiwayatpekerjaanController::class);
@@ -78,6 +63,6 @@ Route::resource('keluarga-pegawai', KeluargapegawaiController::class);
 // pegawai suami istri
 Route::resource('pegawai-suamiIstri', PegawaisuamiistriController::class);
 // pegawai ttd cuti
-Route::resource('pegawai-TTDcuti', PegawaittdcutiController::class);
+Route::resource('pegawai-ttd-cuti', PegawaittdcutiController::class);
 // pegawai
 Route::resource('pegawai', PegawaiController::class);
