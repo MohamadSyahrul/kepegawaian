@@ -66,7 +66,13 @@ class StrukturalController extends Controller
      */
     public function show($id)
     {
-        //
+        $data = Data_struktural::where('id', $id)->get();
+         return response()->json(
+            [
+            "message" => "Success",
+            "data" => $data
+            ]
+        );
     }
 
     /**
