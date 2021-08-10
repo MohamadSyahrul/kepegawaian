@@ -15,7 +15,7 @@ class CreatePegawaiSuamiIstriTable extends Migration
     {
         Schema::create('pegawai_suami_istri', function (Blueprint $table) {
             $table->id();
-            $table->integer('id_pegawai');
+            $table->foreignId('id_pegawai')->references('id')->on('pegawais')->onDelete('cascade')->onUpdate('cascade');
             $table->string('nama_suami_istri');
             $table->string('tempat_lahir');
             $table->date('tanggal_lahir');

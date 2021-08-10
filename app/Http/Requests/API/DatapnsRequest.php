@@ -24,16 +24,16 @@ class DatapnsRequest extends FormRequest
     public function rules()
     {
         return [
-            'id_pegawai',
-            'gol_awal',
-            'gol_akhir',
-            'tmt_cpns',
-            'tmt_pns',
-            'tmt_fungsional',
-            'tmt_akhir',
-            'fungsional',
-            'karpeg',
-            'karis_karsu',
+            'id_pegawai' => 'required',
+            'gol_awal' => 'required',
+            'gol_akhir' => 'required',
+            'tmt_cpns' => 'required',
+            'tmt_pns' => 'required',
+            'tmt_fungsional' => 'required',
+            'tmt_akhir' => 'required',
+            'fungsional' => 'required',
+            'karpeg' => 'required',
+            'karis_karsu' => 'required',
         ];
     }
 }

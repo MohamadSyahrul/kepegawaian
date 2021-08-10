@@ -11,8 +11,10 @@ class Pegawai_pendidikan_tingkat extends Model
     protected $primaryKey = "id";
     protected $table = "pegawai_pendidikan_tingkat";
     protected $fillable = [
-        'id_pegawai',
-        'pendidikan',
+        'id_pendidikan',
         'tingkat',
     ];
+    public function pegawai() {
+        return $this->belongsToMany(Pegawai::class, 'id');
+    }
 }

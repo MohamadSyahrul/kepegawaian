@@ -15,6 +15,7 @@ class CreatePegawaiKeteranganTable extends Migration
     {
         Schema::create('pegawai_keterangan', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('id_keluarga')->references('id')->on('keluarga_pegawai')->onDelete('cascade')->onUpdate('cascade');
             $table->string('keterangan');
             $table->timestamps();
         });

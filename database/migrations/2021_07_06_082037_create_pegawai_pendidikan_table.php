@@ -15,7 +15,7 @@ class CreatePegawaiPendidikanTable extends Migration
     {
         Schema::create('pegawai_pendidikan', function (Blueprint $table) {
             $table->id();
-            $table->integer('id_pegawai');
+            $table->foreignId('id_pegawai')->references('id')->on('pegawais')->onDelete('cascade')->onUpdate('cascade');
             $table->string('pendidikan');
             $table->string('nama_institusi_pendidikan');
             $table->string('tempat');

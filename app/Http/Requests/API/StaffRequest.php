@@ -24,8 +24,8 @@ class StaffRequest extends FormRequest
     public function rules()
     {
         return [
-            'id_pegawai',
-            'staf'
+            'id_pegawai' => 'required',
+            'staf' => 'required'
         ];
     }
 }

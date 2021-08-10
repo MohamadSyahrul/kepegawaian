@@ -3,7 +3,9 @@
 namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\API\PegawaiRequest;
 use App\Http\Requests\API\UnitRequest;
+use App\Models\Pegawai;
 use App\Models\Unit;
 use Illuminate\Http\Request;
 
@@ -38,7 +40,8 @@ class UnitController extends Controller
      */
     public function store(UnitRequest $request)
     {
-        $unit = new Unit;
+    
+        $unit = New Unit;
         $unit->id_pegawai = $request->id_pegawai;
         $unit->unit = $request->unit;
         $unit->kepala = $request->kepala;

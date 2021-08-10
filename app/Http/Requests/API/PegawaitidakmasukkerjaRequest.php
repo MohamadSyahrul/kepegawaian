@@ -24,15 +24,15 @@ class PegawaitidakmasukkerjaRequest extends FormRequest
     public function rules()
     {
         return [
-            'id_pegawai',
-            'jenis',
-            'mulai',
-            'akhir',
-            'nomor_surat',
-            'keperluan',
-            'tempat_kota',
-            'tanggal_ttd',
-            'pegawai_ttd_cuti',
+            'id_pegawai' => 'required',
+            'jenis' => 'required',
+            'mulai' => 'required',
+            'akhir' => 'required',
+            'nomor_surat' => 'required',
+            'keperluan' => 'required',
+            'tempat_kota' => 'required',
+            'tanggal_ttd' => 'required',
+            'pegawai_ttd_cuti' => 'required',
         ];
     }
 }

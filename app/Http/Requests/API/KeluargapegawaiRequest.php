@@ -24,19 +24,18 @@ class KeluargapegawaiRequest extends FormRequest
     public function rules()
     {
         return [
-            'id_pegawai',
-            'nama',
-            'jenis',
-            'pekerjaan',
-            'tmp_lahir',
-            'tgl_lahir',
-            'anak_ke',
-            'tempat_lahir',
-            'tanggal_lahir',
-            'jenis_kelamin',
-            'dari_suami_istri_ke',
-            'id_keterangan',
-            'status_tunjangan',
+            'id_pegawai' => 'required',
+            'nama' => 'required',
+            'jenis' => 'required',
+            'pekerjaan' => 'required',
+            'tmp_lahir' => 'required',
+            'tgl_lahir' => 'required',
+            'anak_ke' => 'required',
+            'tempat_lahir' => 'required',
+            'tanggal_lahir' => 'required',
+            'jenis_kelamin' => 'required',
+            'dari_suami_istri_ke' => 'required',
+            'status_tunjangan' => 'required',
         ];
     }
 }

@@ -22,4 +22,10 @@ class Pegawai_pendidikan extends Model
         'ijazah',
         'tingkat_pendidikan',
     ];
+    public function pegawai() {
+        return $this->belongsToMany(Pegawai::class, 'id');
+    }
+    public function tingkat() {
+        return $this->hasMany(Pegawai_pendidikan_tingkat::class, 'id_pendidikan');
+    }
 }

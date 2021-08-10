@@ -23,4 +23,7 @@ class Pegawai_riwayat_pekerjaan extends Model
         'gaji',
         'keterangan',
     ];
+    public function pegawai() {
+        return $this->belongsToMany(Pegawai::class, 'id');
+    }
 }

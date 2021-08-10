@@ -15,7 +15,7 @@ class CreatePegawaiStatusTable extends Migration
     {
         Schema::create('pegawai_status', function (Blueprint $table) {
             $table->id();
-            $table->integer('id_pegawai');
+            $table->foreignId('id_pegawai')->references('id')->on('pegawais')->onDelete('cascade')->onUpdate('cascade');
             $table->string('status');
             $table->string('status_karyawan');
             $table->timestamps();

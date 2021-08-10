@@ -21,4 +21,7 @@ class Pegawai_tidak_masuk_kerja extends Model
         'tanggal_ttd',
         'pegawai_ttd_cuti',
     ];
+    public function pegawai() {
+        return $this->belongsToMany(Pegawai::class, 'id');
+    }
 }

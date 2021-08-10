@@ -12,4 +12,8 @@ class Staf extends Model
         'id_pegawai',
         'staf'
     ];
+
+    public function pegawai() {
+        return $this->belongsToMany(Pegawai::class, 'id');
+    }
 }

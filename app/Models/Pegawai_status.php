@@ -15,4 +15,7 @@ class Pegawai_status extends Model
         'status',
         'status_karyawan',
     ];
+    public function pegawai() {
+        return $this->belongsToMany(Pegawai::class, 'id');
+    }
 }

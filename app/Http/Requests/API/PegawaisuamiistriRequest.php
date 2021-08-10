@@ -24,14 +24,14 @@ class PegawaisuamiistriRequest extends FormRequest
     public function rules()
     {
         return [
-            'id_pegawai',
-            'nama_suami_istri',
-            'tempat_lahir',
-            'tanggal_lahir',
-            'pekerjaan',
-            'pernikahan_ke',
-            'tanggal_pernikahan',
-            'tempat_pernikahan',
+            'id_pegawai' => 'required',
+            'nama_suami_istri' => 'required',
+            'tempat_lahir' => 'required',
+            'tanggal_lahir' => 'required',
+            'pekerjaan' => 'required',
+            'pernikahan_ke' => 'required',
+            'tanggal_pernikahan' => 'required',
+            'tempat_pernikahan' => 'required',
         ];
     }
 }

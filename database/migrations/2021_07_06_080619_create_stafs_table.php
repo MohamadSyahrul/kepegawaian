@@ -15,7 +15,7 @@ class CreateStafsTable extends Migration
     {
         Schema::create('stafs', function (Blueprint $table) {
             $table->id();
-            $table->integer('id_pegawai');
+            $table->foreignId('id_pegawai')->references('id')->on('pegawais')->onDelete('cascade')->onUpdate('cascade');
             $table->string('staf');
             $table->timestamps();
         });

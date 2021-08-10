@@ -24,9 +24,9 @@ class UnitRequest extends FormRequest
     public function rules()
     {
         return [
-            'id_pegawai',
-            'unit',
-            'kepala'
+            'id_pegawai' => 'required',
+            'unit' => 'required',
+            'kepala' => 'required'
         ];
     }
 }

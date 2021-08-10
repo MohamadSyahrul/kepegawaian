@@ -16,7 +16,7 @@ class CreateKotaTable extends Migration
         Schema::create('kota', function (Blueprint $table) {
             $table->id();
             $table->foreignId('id_provinsi')->references('id')->on('provinsi')->cascadeOnDelete();
-            $table->string('kota');
+            $table->string('nama')->index();
             $table->timestamps();
         });
     }

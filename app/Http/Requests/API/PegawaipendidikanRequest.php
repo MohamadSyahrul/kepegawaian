@@ -24,16 +24,16 @@ class PegawaipendidikanRequest extends FormRequest
     public function rules()
     {
         return [
-            'id_pegawai',
-            'pendidikan',
-            'nama_institusi_pendidikan',
-            'tempat',
-            'fakultas',
-            'jurusan',
-            'tahun_masuk',
-            'tahun_lulus',
-            'ijazah',
-            'tingkat_pendidikan',
+            'id_pegawai' => 'required',
+            'pendidikan' => 'required',
+            'nama_institusi_pendidikan' => 'required',
+            'tempat' => 'required',
+            'fakultas' => 'required',
+            'jurusan' => 'required',
+            'tahun_masuk' => 'required',
+            'tahun_lulus' => 'required',
+            'ijazah' => 'required',
+            'tingkat_pendidikan' => 'required',
         ];
     }
 }

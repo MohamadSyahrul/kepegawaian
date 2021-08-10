@@ -15,7 +15,7 @@ class CreatePegawaiTtdCutiTable extends Migration
     {
         Schema::create('pegawai_ttd_cuti', function (Blueprint $table) {
             $table->id();
-            $table->integer('id_pegawai');
+            $table->foreignId('id_pegawai')->references('id')->on('pegawais')->onDelete('cascade')->onUpdate('cascade');
             $table->string('jabatan');
             $table->timestamps();
         });

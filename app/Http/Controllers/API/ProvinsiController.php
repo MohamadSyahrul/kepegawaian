@@ -92,7 +92,7 @@ class ProvinsiController extends Controller
     
         foreach ($response->provinsi as $provinsi) {
            Provinsi::insert([
-                'provinsi' => $provinsi->nama,
+                'nama' => $provinsi->nama,
                 'id' => $provinsi->id,
             ]);
         }

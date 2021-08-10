@@ -24,19 +24,19 @@ class StrukturalRequest extends FormRequest
     public function rules()
     {
         return [
-            'id_pegawai',
-            'nama_jabatan',
-            'tmt',
-            'nomor_sk',
-            'tanggal_sk',
-            'pejabat_yg_mengesahkan',
-            'keterangan',
-            'jabatan_fungsional',
-            'jabatan_struktural',
-            'status',
-            'tmt_struktural',
-            'tmt_kerja',
-            'tmt_kontrak',
+            'id_pegawai' => 'required',
+            'nama_jabatan' => 'required',
+            'tmt' => 'required',
+            'nomor_sk' => 'required',
+            'tanggal_sk' => 'required',
+            'pejabat_yg_mengesahkan' => 'required',
+            'keterangan' => 'required',
+            'jabatan_fungsional' => 'required',
+            'jabatan_struktural' => 'required',
+            'status' => 'required',
+            'tmt_struktural' => 'required',
+            'tmt_kerja' => 'required',
+            'tmt_kontrak' => 'required',
         ];
     }
 }

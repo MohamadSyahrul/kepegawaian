@@ -115,7 +115,7 @@ class KotaController extends Controller
                     if(isset($kot[$no])) {
                         Kota::insert([
                             'id' => $kot[$no]->id,
-                            'kota' => $kot[$no]->nama,
+                            'nama' => $kot[$no]->nama,
                             'id_provinsi' => $kot[$no]->id_provinsi,
                         ]);
                     }else {

@@ -15,7 +15,7 @@ class CreatePegawaiPendidikanTingkatTable extends Migration
     {
         Schema::create('pegawai_pendidikan_tingkat', function (Blueprint $table) {
             $table->id();
-            $table->string('pendidikan');
+            $table->foreignId('id_pendidikan')->references('id')->on('pegawai_pendidikan')->onDelete('cascade')->onUpdate('cascade');
             $table->string('tingkat');
             $table->timestamps();
         });

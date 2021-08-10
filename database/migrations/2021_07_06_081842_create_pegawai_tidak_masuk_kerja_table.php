@@ -15,7 +15,7 @@ class CreatePegawaiTidakMasukKerjaTable extends Migration
     {
         Schema::create('pegawai_tidak_masuk_kerja', function (Blueprint $table) {
             $table->id();
-            $table->integer('id_pegawai');
+            $table->foreignId('id_pegawai')->references('id')->on('pegawais')->onDelete('cascade')->onUpdate('cascade');
             $table->string('jenis');
             $table->string('mulai');
             $table->string('akhir');

@@ -15,7 +15,7 @@ class CreateDataStrukturalTable extends Migration
     {
         Schema::create('data_struktural', function (Blueprint $table) {
             $table->id();
-            $table->integer('id_pegawai');
+            $table->foreignId('id_pegawai')->references('id')->on('pegawais')->onDelete('cascade')->onUpdate('cascade');
             $table->string('nama_jabatan');
             $table->string('tmt');
             $table->string('nomor_sk');

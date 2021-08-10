@@ -26,4 +26,7 @@ class Data_struktural extends Model
         'tmt_kerja',
         'tmt_kontrak',
     ];
+    public function pegawai() {
+        return $this->belongsToMany(Pegawai::class, 'id');
+    }
 }

@@ -15,7 +15,7 @@ class CreatePegawaiRiwayatPekerjaanTable extends Migration
     {
         Schema::create('pegawai_riwayat_pekerjaan', function (Blueprint $table) {
             $table->id();
-            $table->integer('id_pegawai');
+            $table->foreignId('id_pegawai')->references('id')->on('pegawais')->onDelete('cascade')->onUpdate('cascade');
             $table->string('tentang');
             $table->string('nomor_sk');
             $table->date('tanggal_sk');

@@ -24,17 +24,17 @@ class PegawairiwayatpekerjaanRequest extends FormRequest
     public function rules()
     {
         return [
-            'id_pegawai',
-            'tentang',
-            'nomor_sk',
-            'tanggal_sk',
-            'pejabat_yg_mengesahkan',
-            'pangkat',
-            'tmt',
-            'masa_kerja_tahun',
-            'masa_kerja_bulanan',
-            'gaji',
-            'keterangan',
+            'id_pegawai' => 'required',
+            'tentang' => 'required',
+            'nomor_sk' => 'required',
+            'tanggal_sk' => 'required',
+            'pejabat_yg_mengesahkan' => 'required',
+            'pangkat' => 'required',
+            'tmt' => 'required',
+            'masa_kerja_tahun' => 'required',
+            'masa_kerja_bulanan' => 'required',
+            'gaji' => 'required',
+            'keterangan' => 'required',
         ];
     }
 }

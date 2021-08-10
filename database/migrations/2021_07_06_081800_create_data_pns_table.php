@@ -15,7 +15,7 @@ class CreateDataPnsTable extends Migration
     {
         Schema::create('data_pns', function (Blueprint $table) {
             $table->id();
-            $table->integer('id_pegawai');
+            $table->foreignId('id_pegawai')->references('id')->on('pegawais')->onDelete('cascade')->onUpdate('cascade');
             $table->string('gol_awal');
             $table->string('gol_akhir');
             $table->string('tmt_cpns');

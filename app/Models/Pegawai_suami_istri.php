@@ -20,4 +20,7 @@ class Pegawai_suami_istri extends Model
         'tanggal_pernikahan',
         'tempat_pernikahan',
     ];
+    public function pegawai() {
+        return $this->belongsToMany(Pegawai::class, 'id');
+    }
 }

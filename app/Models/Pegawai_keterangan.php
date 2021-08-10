@@ -11,6 +11,7 @@ class Pegawai_keterangan extends Model
     protected $primaryKey = "id";
     protected $table = "pegawai_keterangan";
     protected $fillable = [
+        'id_keluarga',
         'keterangan',
     ];
 }

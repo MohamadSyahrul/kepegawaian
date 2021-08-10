@@ -5,6 +5,7 @@ namespace App\Http\Controllers\API;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\API\PegawaiRequest;
 use App\Models\Pegawai;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class PegawaiController extends Controller
@@ -38,11 +39,7 @@ class PegawaiController extends Controller
      */
     public function store(PegawaiRequest $request)
     {
-        $pgw = Pegawai::create($request->all());
-        return response()->json([
-            "message" => "Success",
-            "data" => $pgw,
-        ]);
+        // 
     }
 
     /**
@@ -53,7 +50,15 @@ class PegawaiController extends Controller
      */
     public function show($id)
     {
-        //
+        $pgw = Pegawai::with([
+            'unit', 'staf', 'data_pns', 'tidakMasukKerja', 'riwayatPekerjaan', 'dataStruktural',
+            'pegawaiStatus','pegawaiPelatihan','pegawaiPendidikan','keluargaPegawai',
+            'suamiIstri','ttdCuti', 'kecamatan'
+        ])->where('id', $id)->first();
+        return response()->json([
+            "message" => "success",
+            "data_pegawai" => $pgw
+        ],200);
     }
 
     /**

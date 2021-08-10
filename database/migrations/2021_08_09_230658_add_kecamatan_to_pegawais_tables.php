@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateKecamatanTable extends Migration
+class AddKecamatanToPegawaisTables extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,8 @@ class CreateKecamatanTable extends Migration
      */
     public function up()
     {
-        Schema::create('kecamatan', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->foreignId('id_kota')->references('id')->on('kota')->cascadeOnDelete();
-            $table->string('nama')->index();
-            $table->timestamps();
+        Schema::table('pegawais', function (Blueprint $table) {
+            $table->foreign('kecamatan')->references('nama')->on('kecamatan');
         });
     }
 
@@ -28,6 +25,8 @@ class CreateKecamatanTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('kecamatan');
+        Schema::table('pegawais', function (Blueprint $table) {
+            //
+        });
     }
 }

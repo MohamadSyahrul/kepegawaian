@@ -12,6 +12,7 @@
         "irazasyed/telegram-bot-sdk": "^3.4",
         "laravel/framework": "^7.29|^8.40",
         "laravel/helpers": "^1.4",
+        "laravel/passport": "^10.1",
         "laravel/tinker": "^2.5",
         "pschocke/laravel-telegram-login-widget": "^1.2"
     },

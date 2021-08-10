@@ -22,7 +22,12 @@ class Keluarga_pegawai extends Model
         'tanggal_lahir',
         'jenis_kelamin',
         'dari_suami_istri_ke',
-        'id_keterangan',
         'status_tunjangan',
     ];
+    public function pegawai() {
+        return $this->belongsToMany(Pegawai::class, 'id');
+    }
+    public function keterangan() {
+        return $this->hasMany(Pegawai_keterangan::class, 'id_keluarga');
+    }
 }

@@ -101,11 +101,11 @@ class KecamatanController extends Controller
             $response = json_decode($response->getBody());
     
             foreach($response as $kec) {
-                for($no = 0; $no < 73441; $no++) {
+                for($no = 0; $no < 100; $no++) {
                     if(isset($kec[$no])) {
                         Kecamatan::insert([
                             'id' => $kec[$no]->id,
-                            'kecamatan' => $kec[$no]->nama,
+                            'nama' => $kec[$no]->nama,
                             'id_kota' => $kec[$no]->id_kota,
                         ]);
                     }else {

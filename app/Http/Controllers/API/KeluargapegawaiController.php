@@ -5,6 +5,7 @@ namespace App\Http\Controllers\API;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\API\KeluargapegawaiRequest;
 use App\Models\Keluarga_pegawai;
+use App\Models\Pegawai_keterangan;
 use Illuminate\Http\Request;
 
 class KeluargapegawaiController extends Controller
@@ -38,11 +39,38 @@ class KeluargapegawaiController extends Controller
      */
     public function store(KeluargapegawaiRequest $request)
     {
-        $keluarga = Keluarga_pegawai::create($request->all());
+        // $keluarga = Keluarga_pegawai::create($request->all());
+        // return response()->json([
+        //     "message" => "Success",
+        //     "data" => $keluarga,
+        // ]);
+        $keluarga = new Keluarga_pegawai();
+        $keluarga->id_pegawai = $request->id_pegawai;
+        $keluarga->nama = $request->nama;
+        $keluarga->jenis = $request->jenis;
+        $keluarga->pekerjaan = $request->pekerjaan;
+        $keluarga->tmp_lahir = $request->tmp_lahir;
+        $keluarga->tgl_lahir = $request->tgl_lahir;
+        $keluarga->anak_ke = $request->anak_ke;
+        $keluarga->tempat_lahir = $request->tempat_lahir;
+        $keluarga->tanggal_lahir = $request->tanggal_lahir;
+        $keluarga->jenis_kelamin = $request->jenis_kelamin;
+        $keluarga->dari_suami_istri_ke = $request->dari_suami_istri_ke;
+        $keluarga->status_tunjangan = $request->status_tunjangan;
+        $keluarga->save();
+
+        foreach ($request->list_keterangan as $key => $value) {
+            $ktr = array(
+                'id_keluarga' => $keluarga->id,
+                'keterangan' => $value['keterangan']
+            );
+            $ket = Pegawai_keterangan::create($ktr);
+        }
+
         return response()->json([
-            "message" => "Success",
-            "data" => $keluarga,
-        ]);
+                'message'       => 'success',
+                'data' => $ket
+            ], 200);
     }
 
     /**
@@ -53,7 +81,11 @@ class KeluargapegawaiController extends Controller
      */
     public function show($id)
     {
-        //
+        $keluarga = Keluarga_pegawai::with('keterangan')->where('id', $id)->first();
+        return response()->json([
+            "message" => "success",
+            "data_keluarga" => $keluarga
+        ],200);
     }
 
     /**
@@ -78,7 +110,22 @@ class KeluargapegawaiController extends Controller
     {
         $keluarga = Keluarga_pegawai::find($id);
         $keluarga->update($request->all());
-        return $keluarga;
+
+        Pegawai_keterangan::where('id_keluarga', $id)->delete();
+
+        foreach ($request->list_keterangan as $key => $value) {
+            $ktr = array(
+                'id_keluarga' => $keluarga->id,
+                'keterangan' => $value['keterangan']
+            );
+            $ket = Pegawai_keterangan::create($ktr);
+        }
+        return response()->json([
+            'message'       => 'success',
+            'data' => $keluarga,
+            'data_keterangan' => $ket,
+        ], 200);
+        // return $keluarga;
     }
 
     /**

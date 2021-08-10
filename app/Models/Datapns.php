@@ -23,4 +23,7 @@ class Datapns extends Model
         'karpeg',
         'karis_karsu',
     ];
+    public function pegawai() {
+        return $this->belongsToMany(Pegawai::class, 'id');
+    }
 }

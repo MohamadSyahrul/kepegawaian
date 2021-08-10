@@ -19,4 +19,7 @@ class Pegawai_pelatihan extends Model
         'tanggal_akhir_pelaksanaan',
         'durasi_pelaksanaan',
     ];
+    public function pegawai() {
+        return $this->belongsToMany(Pegawai::class, 'id');
+    }
 }

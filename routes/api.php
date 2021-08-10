@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\API\Auth\AuthController;
 use App\Http\Controllers\API\DatapnsController;
 use App\Http\Controllers\API\DatastrukturalController;
 use App\Http\Controllers\API\KeluargapegawaiController;
@@ -32,37 +33,45 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-// data Struktural
-Route::resource('/data-struktural',StrukturalController::class);
+Route::post('register',[AuthController::class, 'register']);
+Route::post('login',[AuthController::class, 'login']);
+Route::post('logout',[AuthController::class, 'logout']);
 
-// unit
-Route::resource('/unit',UnitController::class);
+Route::group(['prefix' => 'kepegawaian'], function () {
+    Route::group(['middleware' => 'auth:api'], function () {
+        // data Struktural
+        Route::resource('/data-struktural',StrukturalController::class);
 
-// staf
-Route::resource('/staf', StaffController::class);
+        // unit
+        Route::resource('/unit',UnitController::class);
 
-// data pns
-Route::resource('data-pns', DatapnsController::class);
+        // staf
+        Route::resource('/staf', StaffController::class);
 
-// pegawai tidak Masuk Kerja
-Route::resource('pegawai-tidak-masuk-kerja', PegawaitidakmasukkerjaController::class);
+        // data pns
+        Route::resource('data-pns', DatapnsController::class);
 
-// Pegawai riwayat pekerjaan
-Route::resource('pegawai-riwayat-pekerjaan', PegawairiwayatpekerjaanController::class);
+        // pegawai tidak Masuk Kerja
+        Route::resource('pegawai-tidak-masuk-kerja', PegawaitidakmasukkerjaController::class);
 
-// Data Struktural
-Route::resource('data-struktural', DatastrukturalController::class);
-// pegawai Status
-Route::resource('pegawai-status', PegawaistatusController::class);
-// pegawai pelatihan
-Route::resource('pegawai-pelatihan', PegawaipelatihanController::class);
-// pegawai pendidikan
-Route::resource('pegawai-pendidikan', PegawaipendidikanController::class);
-// keluarga pegawai
-Route::resource('keluarga-pegawai', KeluargapegawaiController::class);
-// pegawai suami istri
-Route::resource('pegawai-suamiIstri', PegawaisuamiistriController::class);
-// pegawai ttd cuti
-Route::resource('pegawai-ttd-cuti', PegawaittdcutiController::class);
-// pegawai
-Route::resource('pegawai', PegawaiController::class);
+        // Pegawai riwayat pekerjaan
+        Route::resource('pegawai-riwayat-pekerjaan', PegawairiwayatpekerjaanController::class);
+
+        // Data Struktural
+        Route::resource('data-struktural', DatastrukturalController::class);
+        // pegawai Status
+        Route::resource('pegawai-status', PegawaistatusController::class);
+        // pegawai pelatihan
+        Route::resource('pegawai-pelatihan', PegawaipelatihanController::class);
+        // pegawai pendidikan
+        Route::resource('pegawai-pendidikan', PegawaipendidikanController::class);
+        // keluarga pegawai
+        Route::resource('keluarga-pegawai', KeluargapegawaiController::class);
+        // pegawai suami istri
+        Route::resource('pegawai-suamiIstri', PegawaisuamiistriController::class);
+        // pegawai ttd cuti
+        Route::resource('pegawai-ttd-cuti', PegawaittdcutiController::class);
+        // pegawai
+        Route::resource('pegawai', PegawaiController::class);
+    });
+});
