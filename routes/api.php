@@ -15,6 +15,7 @@ use App\Http\Controllers\API\PegawaittdcutiController;
 use App\Http\Controllers\API\StaffController;
 use App\Http\Controllers\API\StrukturalController;
 use App\Http\Controllers\API\UnitController;
+use App\Http\Controllers\TelegramController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -37,6 +38,12 @@ Route::post('register',[AuthController::class, 'register']);
 Route::post('login',[AuthController::class, 'login']);
 Route::post('logout',[AuthController::class, 'logout']);
 
+// Route::post('send',[TelegramController::class, 'send']);
+Route::get('/checkUserBot', [TelegramController::class, 'updatedActivity']);
+Route::post('/send-messageToUser', [TelegramController::class, 'storeMessageToUser']);
+Route::post('/send-messageChannel', [TelegramController::class, 'storeMessageChannel']);
+
+
 Route::group(['prefix' => 'kepegawaian'], function () {
     Route::group(['middleware' => 'auth:api'], function () {
         // data Struktural
@@ -58,7 +65,7 @@ Route::group(['prefix' => 'kepegawaian'], function () {
         Route::resource('pegawai-riwayat-pekerjaan', PegawairiwayatpekerjaanController::class);
 
         // Data Struktural
-        Route::resource('data-struktural', DatastrukturalController::class);
+        // Route::resource('data-struktural', DatastrukturalController::class);
         // pegawai Status
         Route::resource('pegawai-status', PegawaistatusController::class);
         // pegawai pelatihan
