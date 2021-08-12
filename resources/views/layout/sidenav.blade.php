@@ -11,7 +11,7 @@
             <!-- Nav items -->
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link active" href="examples/dashboard.html">
+                    <a class="nav-link {{  request()->routeIs('dashboard') ? 'active' : '' }}" href="{{route('dashboard')}}">
                         <i class="ni ni-tv-2 text-primary"></i>
                         <span class="nav-link-text">Dashboard</span>
                     </a>
@@ -23,14 +23,14 @@
             </h6>
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" href="{{route('dashboardlogin')}}">
+                    <a class="nav-link {{  request()->routeIs('documentationlogin') ? 'active' : '' }}" href="{{route('documentationlogin')}}">
                         <span class="badge badge-pill badge-primary">Post</span>
                         <span class="nav-link-text">Login</span>
                     </a>
 
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="examples/register.html">
+                    <a class="nav-link {{  request()->routeIs('documentationregister') ? 'active' : '' }}" href="{{route('documentationregister')}}">
                         <span class="badge badge-pill badge-primary">Post</span>
                         <span class="nav-link-text">Register</span>
                     </a>
@@ -38,7 +38,7 @@
             </ul>
             <hr class="my-3">
             <h6 class="navbar-heading p-0 text-muted">
-                <span class="docs-normal">Dokumentasi API</span>
+                <span class="docs-normal">Dokumentasi API Telegram</span>
             </h6>
             <ul class="navbar-nav">
                 <li class="nav-item">
@@ -50,13 +50,13 @@
                 <li class="nav-item">
                     <a class="nav-link" href="examples/register.html">
                         <span class="badge badge-pill badge-primary">Post</span>
-                        <span class="nav-link-text">Kirim Pesan ke User</span>
+                        <span class="nav-link-text">Send Message to User</span>
                     </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="examples/register.html">
                         <span class="badge badge-pill badge-primary">Post</span>
-                        <span class="nav-link-text">Kirim Pesan ke Channel</span>
+                        <span class="nav-link-text">Send Message to Channel</span>
                     </a>
                 </li>
             </ul>
@@ -66,21 +66,21 @@
             </h6>
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" href="examples/register.html">
+                    <a class="nav-link {{  request()->routeIs('documentationpegawaiList') ? 'active' : '' }}" href="{{route('documentationpegawaiList')}}">
                         <span class="badge badge-pill badge-success">Get</span>
-                        <span class="nav-link-text">Pegawai</span>
+                        <span class="nav-link-text">List</span>
                     </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="examples/register.html">
                         <span class="badge badge-pill badge-info">Put</span>
-                        <span class="nav-link-text">Pegawai</span>
+                        <span class="nav-link-text">Update</span>
                     </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="examples/register.html">
                         <span class="badge badge-pill badge-danger">Delete</span>
-                        <span class="nav-link-text">Pegawai</span>
+                        <span class="nav-link-text">Delete</span>
                     </a>
                 </li>
             </ul>
@@ -92,25 +92,25 @@
                 <li class="nav-item">
                     <a class="nav-link" href="examples/register.html">
                         <span class="badge badge-pill badge-success">Get</span>
-                        <span class="nav-link-text">Data Struktural</span>
+                        <span class="nav-link-text">List</span>
                     </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="examples/register.html">
                         <span class="badge badge-pill badge-primary">Post</span>
-                        <span class="nav-link-text">Data Struktural</span>
+                        <span class="nav-link-text">Creeate</span>
                     </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="examples/register.html">
                         <span class="badge badge-pill badge-info">Put</span>
-                        <span class="nav-link-text">Data Struktural</span>
+                        <span class="nav-link-text">Update</span>
                     </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="examples/register.html">
                         <span class="badge badge-pill badge-danger">Delete</span>
-                        <span class="nav-link-text">Data Struktural</span>
+                        <span class="nav-link-text">Delete</span>
                     </a>
                 </li>
             </ul>
@@ -122,25 +122,25 @@
                 <li class="nav-item">
                     <a class="nav-link" href="examples/register.html">
                         <span class="badge badge-pill badge-success">Get</span>
-                        <span class="nav-link-text">Unit</span>
+                        <span class="nav-link-text">List</span>
                     </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="examples/register.html">
                         <span class="badge badge-pill badge-primary">Post</span>
-                        <span class="nav-link-text">Unit</span>
+                        <span class="nav-link-text">Create</span>
                     </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="examples/register.html">
                         <span class="badge badge-pill badge-info">Put</span>
-                        <span class="nav-link-text">Unit</span>
+                        <span class="nav-link-text">Update</span>
                     </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="examples/register.html">
                         <span class="badge badge-pill badge-danger">Delete</span>
-                        <span class="nav-link-text">Unit</span>
+                        <span class="nav-link-text">Delete</span>
                     </a>
                 </li>
             </ul>
@@ -152,25 +152,25 @@
                 <li class="nav-item">
                     <a class="nav-link" href="examples/register.html">
                         <span class="badge badge-pill badge-success">Get</span>
-                        <span class="nav-link-text">Staf</span>
+                        <span class="nav-link-text">List</span>
                     </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="examples/register.html">
                         <span class="badge badge-pill badge-primary">Post</span>
-                        <span class="nav-link-text">Staf</span>
+                        <span class="nav-link-text">Create</span>
                     </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="examples/register.html">
                         <span class="badge badge-pill badge-info">Put</span>
-                        <span class="nav-link-text">Staf</span>
+                        <span class="nav-link-text">Update</span>
                     </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="examples/register.html">
                         <span class="badge badge-pill badge-danger">Delete</span>
-                        <span class="nav-link-text">Staf</span>
+                        <span class="nav-link-text">Delete</span>
                     </a>
                 </li>
             </ul>
@@ -182,25 +182,25 @@
                 <li class="nav-item">
                     <a class="nav-link" href="examples/register.html">
                         <span class="badge badge-pill badge-success">Get</span>
-                        <span class="nav-link-text">Data PNS</span>
+                        <span class="nav-link-text">List</span>
                     </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="examples/register.html">
                         <span class="badge badge-pill badge-primary">Post</span>
-                        <span class="nav-link-text">Data PNS</span>
+                        <span class="nav-link-text">Create</span>
                     </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="examples/register.html">
                         <span class="badge badge-pill badge-info">Put</span>
-                        <span class="nav-link-text">Data PNS</span>
+                        <span class="nav-link-text">Update</span>
                     </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="examples/register.html">
                         <span class="badge badge-pill badge-danger">Delete</span>
-                        <span class="nav-link-text">Data PNS</span>
+                        <span class="nav-link-text">Delete</span>
                     </a>
                 </li>
             </ul>
@@ -212,25 +212,25 @@
                 <li class="nav-item">
                     <a class="nav-link" href="examples/register.html">
                         <span class="badge badge-pill badge-success">Get</span>
-                        <span class="nav-link-text">Tidak Masuk Kerja</span>
+                        <span class="nav-link-text">List</span>
                     </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="examples/register.html">
                         <span class="badge badge-pill badge-primary">Post</span>
-                        <span class="nav-link-text">Tidak Masuk Kerja</span>
+                        <span class="nav-link-text">Create</span>
                     </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="examples/register.html">
                         <span class="badge badge-pill badge-info">Put</span>
-                        <span class="nav-link-text">Tidak Masuk Kerja</span>
+                        <span class="nav-link-text">Update</span>
                     </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="examples/register.html">
                         <span class="badge badge-pill badge-danger">Delete</span>
-                        <span class="nav-link-text">Tidak Masuk Kerja</span>
+                        <span class="nav-link-text">Delete</span>
                     </a>
                 </li>
             </ul>
@@ -242,25 +242,25 @@
                 <li class="nav-item">
                     <a class="nav-link" href="examples/register.html">
                         <span class="badge badge-pill badge-success">Get</span>
-                        <span class="nav-link-text">Riwayat Pekerjaan</span>
+                        <span class="nav-link-text">List</span>
                     </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="examples/register.html">
                         <span class="badge badge-pill badge-primary">Post</span>
-                        <span class="nav-link-text">Riwayat Pekerjaan</span>
+                        <span class="nav-link-text">Create</span>
                     </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="examples/register.html">
                         <span class="badge badge-pill badge-info">Put</span>
-                        <span class="nav-link-text">Riwayat Pekerjaan</span>
+                        <span class="nav-link-text">Update</span>
                     </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="examples/register.html">
                         <span class="badge badge-pill badge-danger">Delete</span>
-                        <span class="nav-link-text">Riwayat Pekerjaan</span>
+                        <span class="nav-link-text">Delete</span>
                     </a>
                 </li>
             </ul>
@@ -272,25 +272,25 @@
                 <li class="nav-item">
                     <a class="nav-link" href="examples/register.html">
                         <span class="badge badge-pill badge-success">Get</span>
-                        <span class="nav-link-text">Status</span>
+                        <span class="nav-link-text">List</span>
                     </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="examples/register.html">
                         <span class="badge badge-pill badge-primary">Post</span>
-                        <span class="nav-link-text">Status</span>
+                        <span class="nav-link-text">Create</span>
                     </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="examples/register.html">
                         <span class="badge badge-pill badge-info">Put</span>
-                        <span class="nav-link-text">Status</span>
+                        <span class="nav-link-text">Update</span>
                     </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="examples/register.html">
                         <span class="badge badge-pill badge-danger">Delete</span>
-                        <span class="nav-link-text">Status</span>
+                        <span class="nav-link-text">Delete</span>
                     </a>
                 </li>
             </ul>
@@ -302,25 +302,25 @@
                 <li class="nav-item">
                     <a class="nav-link" href="examples/register.html">
                         <span class="badge badge-pill badge-success">Get</span>
-                        <span class="nav-link-text">Pelatihan</span>
+                        <span class="nav-link-text">List</span>
                     </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="examples/register.html">
                         <span class="badge badge-pill badge-primary">Post</span>
-                        <span class="nav-link-text">Pelatihan</span>
+                        <span class="nav-link-text">Create</span>
                     </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="examples/register.html">
                         <span class="badge badge-pill badge-info">Put</span>
-                        <span class="nav-link-text">Pelatihan</span>
+                        <span class="nav-link-text">Update</span>
                     </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="examples/register.html">
                         <span class="badge badge-pill badge-danger">Delete</span>
-                        <span class="nav-link-text">Pelatihan</span>
+                        <span class="nav-link-text">Delete</span>
                     </a>
                 </li>
             </ul>
@@ -332,25 +332,25 @@
                 <li class="nav-item">
                     <a class="nav-link" href="examples/register.html">
                         <span class="badge badge-pill badge-success">Get</span>
-                        <span class="nav-link-text">Pendidikan</span>
+                        <span class="nav-link-text">List</span>
                     </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="examples/register.html">
                         <span class="badge badge-pill badge-primary">Post</span>
-                        <span class="nav-link-text">Pendidikan</span>
+                        <span class="nav-link-text">Create</span>
                     </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="examples/register.html">
                         <span class="badge badge-pill badge-info">Put</span>
-                        <span class="nav-link-text">Pendidikan</span>
+                        <span class="nav-link-text">Update</span>
                     </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="examples/register.html">
                         <span class="badge badge-pill badge-danger">Delete</span>
-                        <span class="nav-link-text">Pendidikan</span>
+                        <span class="nav-link-text">Delete</span>
                     </a>
                 </li>
             </ul>
@@ -362,25 +362,25 @@
                 <li class="nav-item">
                     <a class="nav-link" href="examples/register.html">
                         <span class="badge badge-pill badge-success">Get</span>
-                        <span class="nav-link-text">Keluarga Pegawai</span>
+                        <span class="nav-link-text">List</span>
                     </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="examples/register.html">
                         <span class="badge badge-pill badge-primary">Post</span>
-                        <span class="nav-link-text">Keluarga Pegawai</span>
+                        <span class="nav-link-text">Create</span>
                     </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="examples/register.html">
                         <span class="badge badge-pill badge-info">Put</span>
-                        <span class="nav-link-text">Keluarga Pegawai</span>
+                        <span class="nav-link-text">Update</span>
                     </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="examples/register.html">
                         <span class="badge badge-pill badge-danger">Delete</span>
-                        <span class="nav-link-text">Keluarga Pegawai</span>
+                        <span class="nav-link-text">Delete</span>
                     </a>
                 </li>
             </ul>
@@ -392,25 +392,25 @@
                 <li class="nav-item">
                     <a class="nav-link" href="examples/register.html">
                         <span class="badge badge-pill badge-success">Get</span>
-                        <span class="nav-link-text">Data Suami Istri</span>
+                        <span class="nav-link-text">List</span>
                     </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="examples/register.html">
                         <span class="badge badge-pill badge-primary">Post</span>
-                        <span class="nav-link-text">Data Suami Istri</span>
+                        <span class="nav-link-text">Create</span>
                     </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="examples/register.html">
                         <span class="badge badge-pill badge-info">Put</span>
-                        <span class="nav-link-text">Data Suami Istri</span>
+                        <span class="nav-link-text">Update</span>
                     </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="examples/register.html">
                         <span class="badge badge-pill badge-danger">Delete</span>
-                        <span class="nav-link-text">Data Suami Istri</span>
+                        <span class="nav-link-text">Delete</span>
                     </a>
                 </li>
             </ul>
@@ -422,25 +422,25 @@
                 <li class="nav-item">
                     <a class="nav-link" href="examples/register.html">
                         <span class="badge badge-pill badge-success">Get</span>
-                        <span class="nav-link-text">Tanda Tangan Cuti</span>
+                        <span class="nav-link-text">List</span>
                     </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="examples/register.html">
                         <span class="badge badge-pill badge-primary">Post</span>
-                        <span class="nav-link-text">Tanda Tangan Cuti</span>
+                        <span class="nav-link-text">Create</span>
                     </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="examples/register.html">
                         <span class="badge badge-pill badge-info">Put</span>
-                        <span class="nav-link-text">Tanda Tangan Cuti</span>
+                        <span class="nav-link-text">Update</span>
                     </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="examples/register.html">
                         <span class="badge badge-pill badge-danger">Delete</span>
-                        <span class="nav-link-text">Tanda Tangan Cuti</span>
+                        <span class="nav-link-text">Delete</span>
                     </a>
                 </li>
             </ul>

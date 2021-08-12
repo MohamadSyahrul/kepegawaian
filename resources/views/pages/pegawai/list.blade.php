@@ -1,6 +1,6 @@
 @extends('layout.master')
 @section('title')
-Documentation Login
+Documentation List Pegawai
 @endsection
 @section('content')
 <div class="header bg-primary pb-6">
@@ -14,7 +14,7 @@ Documentation Login
                 <div class="card-header p-0 border-0">
                     <div class="row">
                         <div class="col">
-                            <h3 class="mb-0">Dokumentasi API Login</h3>
+                            <h3 class="mb-0">Dokumentasi API List Pegawai</h3>
                         </div>
                     </div>
                 </div>
@@ -24,8 +24,8 @@ Documentation Login
                         <div class="col">
                             <h3 class="mb-0">URL :</h3>
                             <p>This is our base url for every endpoint with different http method request</p>
-                            <span class="badge badge-pill badge-primary">Post</span>
-                            <pre class="alert alert-default">http://127.0.0.1:8000/api/login</pre>
+                            <span class="badge badge-pill badge-success">Get</span>
+                            <pre class="alert alert-default">http://127.0.0.1:8000/api/kepegawaian/pegawai</pre>
                         </div>
                     </div>
                     <hr class="my-2">
@@ -49,35 +49,10 @@ Documentation Login
                                         <td class="text-center">String</td>
                                         <td class="text-center">Language message response</td>
                                     </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                    <hr class="my-2">
-                    <div class="row">
-                        <div class="col">
-                            <h4 class="mb-0"> Parameter</h4>
-                        </div>
-                        <div class="table-responsive">
-                            <table class="table align-items-center table-borderless table-flush table-hover">
-                                <thead class="table-header">
                                     <tr>
-                                        <th scope="col" class="border-0 font-weight-bold text-center">Field</th>
-                                        <th scope="col" class="border-0 font-weight-bold text-center">Type</th>
-                                        <th scope="col" class="border-0 font-weight-bold text-center">Description</th>
-                                    </tr>
-                                </thead>
-
-                                <tbody class="table-body">
-                                    <tr>
-                                        <td class="text-center">email</td>
-                                        <td class="text-center">tring</td>
-                                        <td class="text-center">Email users</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="text-center">password</td>
-                                        <td class="text-center">string</td>
-                                        <td class="text-center">Password users</td>
+                                        <td class="text-center">Token</td>
+                                        <td class="text-center">String</td>
+                                        <td class="text-center">Header Authorization Bearer token client user</td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -89,22 +64,46 @@ Documentation Login
                             <h4 class="mb-0"> Success-Response</h4>
                             <pre class="language-json alert alert-default" data-type="json">
                                 <code class="language-json ">
-                        {
-                            "access_token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjo
-                                            iNDM5ZTE3MDcyMTIwMWVmZWNkZTE4MGE1ZjViMjlmNTE4NDAzYjY2ZmQ2MTd
-                                            mNWYxMGM0MjBkMjExNzkyYmQ0NzMyYjBhZDkzZDM4MDkwN2IiLCJpYXQiOjE2
-                                            Mjg3NTYxMTkuMTI4NTcyLCJuYmYiOjE2Mjg3NTYxMTkuMTI4NTg5LCJleHAiO
-                                            jE2NjAyOTIxMTguOTg2MjI1LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.3dY8KC
-                                            B7PwN3r7S7Mpu7M-sCRJ5jyI3WnLD45jiTweuxj2KACGQE8nQQ3L9fFfKsgs",
-                            "token_id": "439e170721201efecde180a5f5b29f518403b66fd617f5f10c420d211792bd473",
-                            "user_id": 1,
-                            "name": 1,
-                            "email": "sudin2181@gmail.com"
-                        }
+                                    [
+                                        {
+                                            "id": 1,
+                                            "nip": 929,
+                                            "noid": null,
+                                            "nama": "mochamad",
+                                            "jurusan": null,
+                                            "jenis_kelamin": "L",
+                                            "agama": "islam",
+                                            "no_tlp": "085707312306",
+                                            "tmp_lahir": "jombang",
+                                            "tgl_lahir": "2021-07-08",
+                                            "shift": null,
+                                            "gol_darah": null,
+                                            "gelar_dpn": null,
+                                            "gelar_blk": null,
+                                            "status_kawin": null,
+                                            "kelurahan": null,
+                                            "kecamatan": "Salo",
+                                            "kota": "Kabupaten Kampar",
+                                            "provinsi": "Riau",
+                                            "askes": null,
+                                            "kode_dosen": null,
+                                            "nip_lama": null,
+                                            "npwp": null,
+                                            "nidn": null,
+                                            "departemen": null,
+                                            "praktisi": null,
+                                            "nama_instansi": null,
+                                            "alamat_instansi": null,
+                                            "pendidikan_terakhir": null,
+                                            "id_user": 1,
+                                            "created_at": "2021-08-12T08:14:49.000000Z",
+                                            "updated_at": "2021-08-12T08:14:49.000000Z"
+                                        }
+                                    ]
                                 </code>
                             </pre>
                         </div>
-                        
+
                     </div>
                 </div>
             </div>

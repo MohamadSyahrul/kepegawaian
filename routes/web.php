@@ -51,11 +51,24 @@ Route::get('/updated-activity',[TelegramController::class, 'updatedActivity']);
 // Route::get('/loginApiDocumentation', function () {
 //     return view('dashboard');
 // })->name('loginApiDocumentation');
-Route::get('/dashboard-login', function () {
-    return view('pages.loginDocumentation');
-})->name('dashboardlogin');
 
 Route::get('/dashboard', function () {
     return view('pages.dashboard');
-});
+})->name('dashboard');
+
+Route::get('/documentation-login', function () {
+    return view('pages.loginDocumentation');
+})->name('documentationlogin');
+
+Route::get('/documentation-register', function () {
+    return view('pages.registerDocumentation');
+})->name('documentationregister');
+
+
+// api pegawai
+Route::get('/documentation-pegawaiList', function () {
+    return view('pages.pegawai.list');
+})->name('documentationpegawaiList');
+
+
 require __DIR__.'/auth.php';
