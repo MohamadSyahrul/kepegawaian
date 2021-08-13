@@ -39,6 +39,7 @@ class PegawaipelatihanController extends Controller
     public function store(PegawaipelatihanRequest $request)
     {
         $pelatihan = Pegawai_pelatihan::create($request->all());
+        // dd($pelatihan);
         return response()->json([
             "message" => "Success",
             "data" => $pelatihan,
@@ -89,6 +90,10 @@ class PegawaipelatihanController extends Controller
      */
     public function destroy($id)
     {
-        return Pegawai_pelatihan::destroy($id);
+        $data = Pegawai_pelatihan::destroy($id);
+        return response()->json([
+            "message" => "Success",
+            "data" => $data,
+        ]);
     }
 }

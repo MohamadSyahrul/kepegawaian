@@ -1,6 +1,6 @@
 @extends('layout.master')
 @section('title')
-Documentation Register
+Documentation Update Data Pns
 @endsection
 @section('content')
 <div class="header bg-primary pb-6">
@@ -14,7 +14,7 @@ Documentation Register
                 <div class="card-header p-0 border-0">
                     <div class="row">
                         <div class="col">
-                            <h3 class="mb-0">Dokumentasi API Register</h3>
+                            <h3 class="mb-0">Dokumentasi API Update Data Pns</h3>
                         </div>
                     </div>
                 </div>
@@ -24,8 +24,8 @@ Documentation Register
                         <div class="col">
                             <h3 class="mb-0">URL :</h3>
                             <p>This is our base url for every endpoint with different http method request</p>
-                            <span class="badge badge-pill badge-primary">Post</span>
-                            <pre class="alert alert-default">http://127.0.0.1:8000/api/register</pre>
+                            <span class="badge badge-pill badge-info">Put</span>
+                            <pre class="alert alert-default">http://127.0.0.1:8000/api/kepegawaian/data-pns/1</pre>
                         </div>
                     </div>
                     <hr class="my-2">
@@ -49,6 +49,11 @@ Documentation Register
                                         <td class="text-center">String</td>
                                         <td class="text-center">Language message response</td>
                                     </tr>
+                                    <tr>
+                                        <td class="text-center">Token</td>
+                                        <td class="text-center">String</td>
+                                        <td class="text-center">Header Authorization Bearer token client user</td>
+                                    </tr>
                                 </tbody>
                             </table>
                         </div>
@@ -70,67 +75,67 @@ Documentation Register
 
                                 <tbody class="table-body">
                                     <tr>
-                                        <td class="text-center">nip</td>
+                                        <td class="text-center">id</td>
                                         <td class="text-center">integer</td>
                                         <td class="text-center">Nomor Identitas Pegawai</td>
                                     </tr>
                                     <tr>
-                                        <td class="text-center">nama</td>
+                                        <td class="text-center">id_pegawai</td>
                                         <td class="text-center">string</td>
                                         <td class="text-center">Masukan Nama Pegawai</td>
                                     </tr>
                                     <tr>
-                                        <td class="text-center">jenis_kelamin</td>
+                                        <td class="text-center">gol_awal</td>
                                         <td class="text-center">string</td>
                                         <td class="text-center">Masukan satu huruf jenis kelamin seperti : L/P</td>
                                     </tr>
                                     <tr>
-                                        <td class="text-center">agama</td>
-                                        <td class="text-center">string</td>
-                                        <td class="text-center">Masukan agama anda</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="text-center">alamat</td>
-                                        <td class="text-center">string</td>
-                                        <td class="text-center">Masukan alamat anda</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="text-center">tmp_lahir</td>
-                                        <td class="text-center">string</td>
-                                        <td class="text-center">Masukan tempat lahir anda</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="text-center">tgl_lahir</td>
-                                        <td class="text-center">date</td>
-                                        <td class="text-center">Masukan dengan format tanggal seperti 2000-06-22</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="text-center">no_tlp</td>
-                                        <td class="text-center">integer</td>
-                                        <td class="text-center">Masukan nomor telepon dengan format 082633749502</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="text-center">kecamatan</td>
-                                        <td class="text-center">string</td>
-                                        <td class="text-center">Masukan nama kecamatan</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="text-center">kota</td>
-                                        <td class="text-center">string</td>
-                                        <td class="text-center">Masukan nama kota atau kabupaten yang di awali dengan kota atau kabupaten</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="text-center">provinsi</td>
-                                        <td class="text-center">integer</td>
-                                        <td class="text-center">Masukan nama provinsi</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="text-center">password</td>
+                                        <td class="text-center">gol_akhir</td>
                                         <td class="text-center">string</td>
                                         <td class="text-center">Masukan password</td>
                                     </tr>
                                     <tr>
-                                        <td class="text-center">password_confirmation</td>
+                                        <td class="text-center">tmt_cpns</td>
+                                        <td class="text-center">integer</td>
+                                        <td class="text-center">ulangi password</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-center">tmt_pns</td>
+                                        <td class="text-center">integer</td>
+                                        <td class="text-center">Nomor Identitas Pegawai</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-center">tmt_fungsional</td>
+                                        <td class="text-center">string</td>
+                                        <td class="text-center">Masukan Nama Pegawai</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-center">tmt_akhir</td>
+                                        <td class="text-center">string</td>
+                                        <td class="text-center">Masukan satu huruf jenis kelamin seperti : L/P</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-center">fungsional</td>
+                                        <td class="text-center">string</td>
+                                        <td class="text-center">Masukan password</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-center">karpeg</td>
+                                        <td class="text-center">integer</td>
+                                        <td class="text-center">ulangi password</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-center">karis_karsu</td>
+                                        <td class="text-center">string</td>
+                                        <td class="text-center">Masukan satu huruf jenis kelamin seperti : L/P</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-center">created_at</td>
+                                        <td class="text-center">string</td>
+                                        <td class="text-center">Masukan password</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-center">updated_at</td>
                                         <td class="text-center">integer</td>
                                         <td class="text-center">ulangi password</td>
                                     </tr>
@@ -145,11 +150,22 @@ Documentation Register
                             <pre class="language-json alert alert-default" data-type="json">
                                 <code class="language-json ">
                                     {
-                                        "username": "yung",
-                                        "email": "sudin2181@gmail.com",
-                                        "updated_at": "2021-08-12T08:14:49.000000Z",
-                                        "created_at": "2021-08-12T08:14:49.000000Z",
-                                        "id": 1
+                                        "message": "Update Data PNS method Success",
+                                        "data": {
+                                            "id": 1,
+                                            "id_pegawai": "1",
+                                            "gol_awal": "sss",
+                                            "gol_akhir": "ss",
+                                            "tmt_cpns": "at",
+                                            "tmt_pns": "op",
+                                            "tmt_fungsional": "ww",
+                                            "tmt_akhir": "q",
+                                            "fungsional": "r",
+                                            "karpeg": "t",
+                                            "karis_karsu": "u",
+                                            "created_at": "2021-08-12T18:30:43.000000Z",
+                                            "updated_at": "2021-08-12T18:40:16.000000Z"
+                                        }
                                     }
                                 </code>
                             </pre>

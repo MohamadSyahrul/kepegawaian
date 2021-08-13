@@ -13,7 +13,7 @@ class PegawaipelatihanRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,13 @@ class PegawaipelatihanRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'id_pegawai' => 'required',
+            'nama_pelatihan' => 'required',
+            'institusi_pelatihan' => 'required',
+            'tempat_lahir' => 'required',
+            'tanggal_mulai_pelaksanaan' => 'required',
+            'tanggal_akhir_pelaksanaan' => 'required',
+            'durasi_pelaksanaan' => 'required',
         ];
     }
 }

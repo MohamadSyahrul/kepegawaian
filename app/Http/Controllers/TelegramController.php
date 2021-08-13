@@ -18,6 +18,7 @@ class TelegramController extends Controller
         // $activity = Telegram::getUpdates();
         // dd($activity);
         $response = Telegram::getUpdates();
+        // dd($response);
         return response()->json([
             "message" => "success",
             "data" => $response
@@ -26,14 +27,14 @@ class TelegramController extends Controller
         // foreach ($response as $index=>$respon){
         //          array_push($index ,[$respon['message']['from']]);
         //     }
-        //     foreach ($response as $i=>$respon){
-        //             $bot[$i] = $respon['channel_post']['sender_chat']['id'];
-        //             $botId[$i] = $respon['message']['from']['id'];
-        //         }
+            // foreach ($response as $i=>$respon){
+            //         $bot[$i] = $respon['channel_post']['sender_chat']['id'];
+            //         $name[$i] = $respon['message']['from']['id'];
+            //     }
         // // $index = [];
         // // $botId = $response[$index]->message->from->id;
         // // $botId = $response[$index]['message']['from']['id'];
-        // dd($botId, $bot);
+        // dd($bot, $name);
         // $to = collect($botId);
         // $index = 3; 
      }
@@ -75,7 +76,7 @@ class TelegramController extends Controller
         . "<b>Message: </b>". $request->pesan;
         
          Telegram::sendMessage([
-             'chat_id' => '-1001552678944',
+             'chat_id' => '-1001508150399',
              'parse_mode' => 'HTML',
              'text' => $text
          ]);

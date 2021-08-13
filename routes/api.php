@@ -39,13 +39,15 @@ Route::post('login',[AuthController::class, 'login']);
 Route::post('logout',[AuthController::class, 'logout']);
 
 // Route::post('send',[TelegramController::class, 'send']);
-Route::get('/checkUserBot', [TelegramController::class, 'updatedActivity']);
-Route::post('/send-messageToUser', [TelegramController::class, 'storeMessageToUser']);
-Route::post('/send-messageChannel', [TelegramController::class, 'storeMessageChannel']);
+
 
 
 Route::group(['prefix' => 'kepegawaian'], function () {
     Route::group(['middleware' => 'auth:api'], function () {
+        // telegram
+        Route::get('/checkUserBot', [TelegramController::class, 'updatedActivity']);
+        Route::post('/send-messageToUser', [TelegramController::class, 'storeMessageToUser']);
+        Route::post('/send-messageChannel', [TelegramController::class, 'storeMessageChannel']);
         // data Struktural
         Route::resource('/data-struktural',StrukturalController::class);
 

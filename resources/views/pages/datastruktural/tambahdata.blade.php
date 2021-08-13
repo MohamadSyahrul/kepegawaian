@@ -1,6 +1,6 @@
 @extends('layout.master')
 @section('title')
-Documentation Register
+Documentation Tambah Data Struktural
 @endsection
 @section('content')
 <div class="header bg-primary pb-6">
@@ -14,7 +14,7 @@ Documentation Register
                 <div class="card-header p-0 border-0">
                     <div class="row">
                         <div class="col">
-                            <h3 class="mb-0">Dokumentasi API Register</h3>
+                            <h3 class="mb-0">Dokumentasi API Tambah Data Struktural</h3>
                         </div>
                     </div>
                 </div>
@@ -25,7 +25,7 @@ Documentation Register
                             <h3 class="mb-0">URL :</h3>
                             <p>This is our base url for every endpoint with different http method request</p>
                             <span class="badge badge-pill badge-primary">Post</span>
-                            <pre class="alert alert-default">http://127.0.0.1:8000/api/register</pre>
+                            <pre class="alert alert-default">127.0.0.1:8000/api/kepegawaian/data-struktural</pre>
                         </div>
                     </div>
                     <hr class="my-2">
@@ -49,6 +49,11 @@ Documentation Register
                                         <td class="text-center">String</td>
                                         <td class="text-center">Language message response</td>
                                     </tr>
+                                    <tr>
+                                        <td class="text-center">Token</td>
+                                        <td class="text-center">String</td>
+                                        <td class="text-center">Header Authorization Bearer token client user</td>
+                                    </tr>
                                 </tbody>
                             </table>
                         </div>
@@ -70,67 +75,83 @@ Documentation Register
 
                                 <tbody class="table-body">
                                     <tr>
-                                        <td class="text-center">nip</td>
+                                        <td class="text-center">id</td>
                                         <td class="text-center">integer</td>
                                         <td class="text-center">Nomor Identitas Pegawai</td>
                                     </tr>
                                     <tr>
-                                        <td class="text-center">nama</td>
+                                        <td class="text-center">id_pegawai</td>
                                         <td class="text-center">string</td>
                                         <td class="text-center">Masukan Nama Pegawai</td>
                                     </tr>
                                     <tr>
-                                        <td class="text-center">jenis_kelamin</td>
+                                        <td class="text-center">nama_jabatan</td>
                                         <td class="text-center">string</td>
                                         <td class="text-center">Masukan satu huruf jenis kelamin seperti : L/P</td>
                                     </tr>
                                     <tr>
-                                        <td class="text-center">agama</td>
+                                        <td class="text-center">tmt</td>
                                         <td class="text-center">string</td>
                                         <td class="text-center">Masukan agama anda</td>
                                     </tr>
                                     <tr>
-                                        <td class="text-center">alamat</td>
+                                        <td class="text-center">nomor_sk</td>
                                         <td class="text-center">string</td>
                                         <td class="text-center">Masukan alamat anda</td>
                                     </tr>
                                     <tr>
-                                        <td class="text-center">tmp_lahir</td>
+                                        <td class="text-center">tanggal_sk</td>
                                         <td class="text-center">string</td>
                                         <td class="text-center">Masukan tempat lahir anda</td>
                                     </tr>
                                     <tr>
-                                        <td class="text-center">tgl_lahir</td>
+                                        <td class="text-center">pejabat_yang_mengesahkan</td>
                                         <td class="text-center">date</td>
                                         <td class="text-center">Masukan dengan format tanggal seperti 2000-06-22</td>
                                     </tr>
                                     <tr>
-                                        <td class="text-center">no_tlp</td>
+                                        <td class="text-center">keterangan</td>
                                         <td class="text-center">integer</td>
                                         <td class="text-center">Masukan nomor telepon dengan format 082633749502</td>
                                     </tr>
                                     <tr>
-                                        <td class="text-center">kecamatan</td>
+                                        <td class="text-center">jabatan_fungsional</td>
                                         <td class="text-center">string</td>
                                         <td class="text-center">Masukan nama kecamatan</td>
                                     </tr>
                                     <tr>
-                                        <td class="text-center">kota</td>
+                                        <td class="text-center">jabatan_struktural</td>
                                         <td class="text-center">string</td>
-                                        <td class="text-center">Masukan nama kota atau kabupaten yang di awali dengan kota atau kabupaten</td>
+                                        <td class="text-center">Masukan nama kota atau kabupaten yang di awali dengan
+                                            kota atau kabupaten</td>
                                     </tr>
                                     <tr>
-                                        <td class="text-center">provinsi</td>
+                                        <td class="text-center">status</td>
                                         <td class="text-center">integer</td>
                                         <td class="text-center">Masukan nama provinsi</td>
                                     </tr>
                                     <tr>
-                                        <td class="text-center">password</td>
+                                        <td class="text-center">tmt_struktural</td>
                                         <td class="text-center">string</td>
                                         <td class="text-center">Masukan password</td>
                                     </tr>
                                     <tr>
-                                        <td class="text-center">password_confirmation</td>
+                                        <td class="text-center">tmt_kerja</td>
+                                        <td class="text-center">integer</td>
+                                        <td class="text-center">ulangi password</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-center">tmt_kontrak</td>
+                                        <td class="text-center">integer</td>
+                                        <td class="text-center">Masukan nama provinsi</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-center">updated_at</td>
+                                        <td class="text-center">string</td>
+                                        <td class="text-center">Masukan password</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-center">created_at</td>
                                         <td class="text-center">integer</td>
                                         <td class="text-center">ulangi password</td>
                                     </tr>
@@ -143,18 +164,29 @@ Documentation Register
                         <div class="col">
                             <h4 class="mb-0"> Success-Response</h4>
                             <pre class="language-json alert alert-default" data-type="json">
-                                <code class="language-json ">
-                                    {
-                                        "username": "yung",
-                                        "email": "sudin2181@gmail.com",
-                                        "updated_at": "2021-08-12T08:14:49.000000Z",
-                                        "created_at": "2021-08-12T08:14:49.000000Z",
-                                        "id": 1
-                                    }
-                                </code>
+                                <code class="language-json "> 
+                                    { 
+                                        "id": 2, 
+                                        "id_pegawai": "1", 
+                                        "nama_jabatan": "pegawai", 
+                                        "tmt": "coba1", 
+                                        "nomor_sk": "8281", 
+                                        "tanggal_sk": "2021-07-11", 
+                                        "pejabat_yg_mengesahkan": "bagus", 
+                                        "keterangan": "coba aa", 
+                                        "jabatan_fungsional": "pegawai", 
+                                        "jabatan_struktural": "pegawai", 
+                                        "status": "aktiv", 
+                                        "tmt_struktural": "coba", 
+                                        "tmt_kerja": "coba", 
+                                        "tmt_kontrak": "coba", 
+                                        "updated_at": "2021-08-12T16:24:36.000000Z", 
+                                        "created_at": "2021-08-12T16:24:36.000000Z" 
+                                    } 
+                                </code> 
                             </pre>
                         </div>
-                        
+
                     </div>
                 </div>
             </div>

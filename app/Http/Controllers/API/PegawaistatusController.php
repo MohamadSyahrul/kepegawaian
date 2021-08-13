@@ -89,6 +89,12 @@ class PegawaistatusController extends Controller
      */
     public function destroy($id)
     {
-        return Pegawai_status::destroy($id);
+        $status = Pegawai_status::destroy($id);
+        return response()->json(
+            [
+                "message" => "Success",
+                "data" => $status
+            ]
+            );
     }
 }
