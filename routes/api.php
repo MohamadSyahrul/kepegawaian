@@ -1,23 +1,24 @@
 <?php
 
-use App\Http\Controllers\API\Auth\AuthController;
-use App\Http\Controllers\API\DatapnsController;
-use App\Http\Controllers\API\DatastrukturalController;
-use App\Http\Controllers\API\KeluargapegawaiController;
-use App\Http\Controllers\API\PegawaiController;
-use App\Http\Controllers\API\PegawaipelatihanController;
-use App\Http\Controllers\API\PegawaipendidikanController;
-use App\Http\Controllers\API\PegawairiwayatpekerjaanController;
-use App\Http\Controllers\API\PegawaistatusController;
-use App\Http\Controllers\API\PegawaisuamiistriController;
-use App\Http\Controllers\API\PegawaitidakmasukkerjaController;
-use App\Http\Controllers\API\PegawaittdcutiController;
-use App\Http\Controllers\API\StaffController;
-use App\Http\Controllers\API\StrukturalController;
-use App\Http\Controllers\API\UnitController;
-use App\Http\Controllers\TelegramController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\API\UnitController;
+use App\Http\Controllers\TelegramController;
+use App\Http\Controllers\API\StaffController;
+use App\Http\Controllers\API\DatapnsController;
+use App\Http\Controllers\API\MessageController;
+use App\Http\Controllers\API\PegawaiController;
+use App\Http\Controllers\API\Auth\AuthController;
+use App\Http\Controllers\API\StrukturalController;
+use App\Http\Controllers\API\PegawaistatusController;
+use App\Http\Controllers\API\DatastrukturalController;
+use App\Http\Controllers\API\PegawaittdcutiController;
+use App\Http\Controllers\API\KeluargapegawaiController;
+use App\Http\Controllers\API\PegawaipelatihanController;
+use App\Http\Controllers\API\PegawaipendidikanController;
+use App\Http\Controllers\API\PegawaisuamiistriController;
+use App\Http\Controllers\API\PegawaitidakmasukkerjaController;
+use App\Http\Controllers\API\PegawairiwayatpekerjaanController;
 
 /*
 |--------------------------------------------------------------------------
@@ -48,6 +49,16 @@ Route::group(['prefix' => 'kepegawaian'], function () {
         Route::get('/checkUserBot', [TelegramController::class, 'updatedActivity']);
         Route::post('/send-messageToUser', [TelegramController::class, 'storeMessageToUser']);
         Route::post('/send-messageChannel', [TelegramController::class, 'storeMessageChannel']);
+
+        // whatsaap
+        Route::post('/sendMsg', [MessageController::class, 'sendMessage']);
+        Route::post('/sendImg', [MessageController::class, 'sendWithImg']);
+        // Route::post('/broadCast', [MessageController::class, 'sendBroadcast']);
+
+
+        Route::get('/noTlp', [MessageController::class, 'getNotlp']);
+
+
         // data Struktural
         Route::resource('/data-struktural',StrukturalController::class);
 

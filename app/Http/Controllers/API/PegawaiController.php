@@ -53,7 +53,7 @@ class PegawaiController extends Controller
         $pgw = Pegawai::with([
             'unit', 'staf', 'data_pns', 'tidakMasukKerja', 'riwayatPekerjaan', 'dataStruktural',
             'pegawaiStatus','pegawaiPelatihan','pegawaiPendidikan','keluargaPegawai',
-            'suamiIstri','ttdCuti', 'kecamatan'
+            'suamiIstri','ttdCuti'
         ])->where('id', $id)->first();
         return response()->json([
             "message" => "success",

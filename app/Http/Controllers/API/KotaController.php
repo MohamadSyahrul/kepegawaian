@@ -88,7 +88,6 @@ class KotaController extends Controller
 
     public function insertApiKot() {
 
-        // api desa https://dev.farizdotid.com/api/daerahindonesia/kelurahan?id_kecamatan=3214010
 
         $provinsi = Provinsi::all();
 
@@ -101,14 +100,9 @@ class KotaController extends Controller
             $response = $client->request('GET', $url, [
                 'verify'  => false,
             ]);
-
-            // $response = Http::get($url);
     
             $responseBody = json_decode($response->getBody());
 
-            // $jml = json_decode($response->getBody());
-
-            // dd(count($jml));
     
             foreach($responseBody as $kot) {
                 for($no = 0; $no < 600; $no++) {

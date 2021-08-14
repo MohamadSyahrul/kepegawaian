@@ -12,9 +12,13 @@ class Kecamatan extends Model
     protected $table = "kecamatan";
     protected $fillable = [
         'id_kota',
-        'kecamatan'
+        'nama'
     ];
     public function kota() {
         return $this->belongsTo(Kota::class, 'id');
+    }
+
+    public function pegawai() {
+        return $this->hasOne(Pegawai::class);
     }
 }

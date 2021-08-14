@@ -11,7 +11,7 @@ class Kota extends Model
     protected $primaryKey = "id";
     protected $table = "kota";
     protected $fillable = [
-        'kota',
+        'nama',
         'id_provinsi'
     ];
     public function kecamatan() {
@@ -19,5 +19,8 @@ class Kota extends Model
     }
     public function provinsi() {
         return $this->belongsTo(Provinsi::class, 'id');
+    }
+    public function pegawai() {
+        return $this->hasOne(Pegawai::class);
     }
 }

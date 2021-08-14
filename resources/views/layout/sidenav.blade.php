@@ -72,7 +72,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">
+                    <a class="nav-link {{  request()->routeIs('documentationpegawaiShow') ? 'active' : '' }}" href="{{route('documentationpegawaiShow')}}">
                         <span class="badge badge-pill badge-success">get</span>
                         <span class="nav-link-text">Detail</span>
                     </a>
@@ -447,6 +447,24 @@
                     <a class="nav-link {{  request()->routeIs('documentationpegawai-ttd-cutiDelete') ? 'active' : '' }}" href="{{route('documentationpegawai-ttd-cutiDelete')}}">
                         <span class="badge badge-pill badge-danger">Delete</span>
                         <span class="nav-link-text">Delete</span>
+                    </a>
+                </li>
+            </ul>
+            <hr class="my-3">
+            <h6 class="navbar-heading p-0 text-muted">
+                <span class="docs-normal">API Whatsaap</span>
+            </h6>
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link {{  request()->routeIs('documentationWhatsaap-send-message') ? 'active' : '' }}" href="{{route('documentationWhatsaap-send-message')}}">
+                        <span class="badge badge-pill badge-primary">Post</span>
+                        <span class="nav-link-text">Kirim Pesan Ke User</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link {{  request()->routeIs('documentationWhatsaap-send-image') ? 'active' : '' }}" href="{{route('documentationWhatsaap-send-image')}}">
+                        <span class="badge badge-pill badge-primary">Post</span>
+                        <span class="nav-link-text">Kirim Gambar ke User</span>
                     </a>
                 </li>
             </ul>

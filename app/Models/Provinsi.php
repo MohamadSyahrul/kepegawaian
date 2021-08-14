@@ -11,9 +11,12 @@ class Provinsi extends Model
     protected $primaryKey = "id";
     protected $table = "provinsi";
     protected $fillable = [
-        'provinsi'
+        'nama'
     ];
     public function kota() {
         return $this->hasMany(Kota::class, 'id_provinsi');
+    }
+    public function pegawai() {
+        return $this->hasOne(Pegawai::class);
     }
 }

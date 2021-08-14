@@ -24,7 +24,7 @@ Documentation Update Pegawai
                         <div class="col">
                             <h3 class="mb-0">URL :</h3>
                             <p>This is our base url for every endpoint with different http method request</p>
-                            <span class="badge badge-pill badge-primary">Post</span>
+                            <span class="badge badge-pill badge-info">Put</span>
                             <pre class="alert alert-default">http://127.0.0.1:8000/api/kepegawaian/pegawai/1</pre>
                         </div>
                     </div>
